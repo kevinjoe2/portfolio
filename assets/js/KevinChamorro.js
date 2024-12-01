@@ -14,6 +14,7 @@
 
 // smooth scroll
 $(document).ready(function(){
+    downloadCv();
     $(".navbar .nav-link").on('click', function(event) {
 
         if (this.hash !== "") {
@@ -147,4 +148,16 @@ function initMap() {
         }
       ]
     });
+}
+
+function downloadCv() {
+  document.getElementById('download-cv').addEventListener('click', () => {
+      const a = document.createElement('a');
+      //a.href = "https://drive.google.com/file/d/1UJk5oIVZfBSaY0gdfEVQcG0btae75thV/view?usp=sharing";
+      a.href = "https://drive.usercontent.google.com/uc?id=1UJk5oIVZfBSaY0gdfEVQcG0btae75thV&export=download";
+      a.download = 'cvKevinChamorro.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+  });
 }
